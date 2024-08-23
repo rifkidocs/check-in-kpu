@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"
+      integrity="sha512-jEnuDt6jfecCjthQAJ+ed0MTVA++5ZKmlUcmDGBv2vUI/REn6FuIdixLNnQT+vKusE2hhTk2is3cFvv5wA+Sgg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,7 +22,7 @@
     </style>
   </head>
   <body>
-    <main class="min-h-screen">
+    <main class="min-h-screen relative">
       <nav class="bg-gradient-to-b from-[#B52D42] to-[#4F141D] h-80 py-10">
         <img
           class="h-36 mx-auto mb-5"
@@ -36,6 +41,59 @@
       <div class="absolute right-10 top-48">
         <img src="/images/MASKOT PILKADA.png" class="h-56" alt="Maskot" />
       </div>
+
+      <!-- CARD -->
+      <div class="flex justify-center items-center absolute inset-0">
+        <div
+          class="bg-white/75 h-3/6 w-4/5 mt-48 border border-gray-500 rounded-3xl shadow-md">
+          <!-- SUCCESS -->
+          <div class="">
+            <div class="h-64" id="success"></div>
+            <script>
+              const animation = lottie.loadAnimation({
+                container: document.getElementById("success"), // elemen tempat animasi akan diputar
+                renderer: "svg", // bisa juga 'canvas' atau 'html'
+                loop: false, // tidak akan mengulang animasi
+                autoplay: true, // langsung memulai animasi saat dimuat
+                path: "/json/success.json", // path ke file Lottie JSON
+              });
+
+              // Event listener untuk mengatasi setelah animasi selesai
+              animation.addEventListener("complete", function () {
+                // console.log("Animasi sukses selesai");
+              });
+            </script>
+            <h2 class="text-gray-700 text-3xl font-semibold text-center">
+              CHECK-IN BERHASIL
+            </h2>
+          </div>
+
+          <!-- FAILURE -->
+          <div class="hidden">
+            <div class="h-60 p-4" id="failure"></div>
+            <script>
+              const animation2 = lottie.loadAnimation({
+                container: document.getElementById("failure"), // elemen tempat animasi akan diputar
+                renderer: "svg", // bisa juga 'canvas' atau 'html'
+                loop: false, // tidak akan mengulang animasi
+                autoplay: true, // langsung memulai animasi saat dimuat
+                path: "/json/failure.json", // path ke file Lottie JSON
+              });
+
+              // Event listener untuk mengatasi setelah animasi selesai
+              animation2.addEventListener("complete", function () {
+                // console.log("Animasi gagal selesai");
+              });
+            </script>
+            <h2 class="text-gray-700 text-3xl font-semibold text-center">
+              CHECK-IN GAGAL
+            </h2>
+          </div>
+        </div>
+
+        <!-- FAILURE -->
+      </div>
+
       <img class="mx-auto" src="/images/peta.png" alt="Peta" />
       <footer
         class="bg-gradient-to-b from-[#B52D42] to-[#4F141D] h-40 py-10 fixed bottom-0 w-full flex justify-center items-center">
