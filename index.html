@@ -4,11 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"
-      integrity="sha512-jEnuDt6jfecCjthQAJ+ed0MTVA++5ZKmlUcmDGBv2vUI/REn6FuIdixLNnQT+vKusE2hhTk2is3cFvv5wA+Sgg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -47,44 +42,24 @@
         <div
           class="bg-white/75 h-3/6 w-4/5 mt-48 border border-gray-500 rounded-3xl shadow-md">
           <!-- SUCCESS -->
-          <div class="">
-            <div class="h-64" id="success"></div>
-            <script>
-              const animation = lottie.loadAnimation({
-                container: document.getElementById("success"),
-                renderer: "svg",
-                loop: false,
-                autoplay: true,
-                path: "/json/success.json",
-              });
-
-              // Event listener untuk mengatasi setelah animasi selesai
-              animation.addEventListener("complete", function () {
-                // console.log("Animasi sukses selesai");
-              });
-            </script>
+          <div class="hidden">
+            <img
+              src="/images/success.svg"
+              class="h-60 mx-auto"
+              alt="success"
+              srcset="" />
             <h2 class="text-gray-700 text-3xl font-semibold text-center">
               CHECK-IN BERHASIL
             </h2>
           </div>
 
           <!-- FAILURE -->
-          <div class="hidden">
-            <div class="h-60 p-4" id="failure"></div>
-            <script>
-              const animation2 = lottie.loadAnimation({
-                container: document.getElementById("failure"),
-                renderer: "svg",
-                loop: false,
-                autoplay: true,
-                path: "/json/failure.json",
-              });
-
-              // Event listener untuk mengatasi setelah animasi selesai
-              animation2.addEventListener("complete", function () {
-                // console.log("Animasi gagal selesai");
-              });
-            </script>
+          <div class="">
+            <img
+              src="/images/failure.svg"
+              class="h-48 mx-auto mt-4"
+              alt="failure"
+              srcset="" />
             <h2 class="text-gray-700 text-3xl font-semibold text-center">
               CHECK-IN GAGAL
             </h2>
@@ -94,6 +69,7 @@
         <!-- FAILURE -->
       </div>
 
+      <input class="absolute bottom-0" type="text" />
       <img class="mx-auto" src="/images/peta.png" alt="Peta" />
       <footer
         class="bg-gradient-to-b from-[#B52D42] to-[#4F141D] h-40 py-10 fixed bottom-0 w-full flex justify-center items-center">
